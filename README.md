@@ -18,6 +18,8 @@
 
 3.  `:scalene`
 
+![Triagle types](https://curriculum-content.s3.amazonaws.com/module-1/ruby-metaprogramming/triangle-classification-lab/Image_141_MathematicalTriangles.png)
+
 - The `kind` method should raise a custom error, `TriangleError` if the triangle
   is invalid. Check out the hint below to understand what makes a triangle
   invalid. Write a custom error class, `TriangleError` and inherit it from
