@@ -51,4 +51,4 @@ Further, each side must be larger than 0.
 - [Exception Handling](http://www.skorks.com/2009/09/ruby-exceptions-and-exception-handling/)
 - [Basic Mathematics](http://www.basic-mathematics.com/) - [Types of Triangles](http://www.basic-mathematics.com/types-of-triangles.html)
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/triangle-classification' title='Triangle'>Triangle</a> on Learn.co and start learning to code for free.</p>
+
