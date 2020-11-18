@@ -1,8 +1,8 @@
-# Triangle
+# Triangle Classification Lab
 
 ## Objectives
 
-1.  Define a custom error and use it.
+1. Define a custom error and use it.
 
 ## Instructions
 
@@ -12,11 +12,11 @@
 - Give your Triangles an instance method, `kind` that returns, as a symbol, its
   type. The valid types are:
 
-1.  `:equilateral`
+1. `:equilateral`
 
-2.  `:isosceles`
+2. `:isosceles`
 
-3.  `:scalene`
+3. `:scalene`
 
 ![Triagle types](https://curriculum-content.s3.amazonaws.com/module-1/ruby-metaprogramming/triangle-classification-lab/Image_141_MathematicalTriangles.png)
 
@@ -39,6 +39,8 @@ class Triangle
 end
 ```
 
+**Note**: Several of the tests will be looking for the `TriangleError` to be raised. If you implement a `rescue` for it, however, the tests will not recognize that the error was raised. For purposes of this lab, therefore, you should not include a `rescue`.
+
 ## Hint
 
 The sum of the lengths of any two sides of a triangle always exceeds the length
@@ -50,5 +52,3 @@ Further, each side must be larger than 0.
 
 - [Exception Handling](http://www.skorks.com/2009/09/ruby-exceptions-and-exception-handling/)
 - [Basic Mathematics](http://www.basic-mathematics.com/) - [Types of Triangles](http://www.basic-mathematics.com/types-of-triangles.html)
-
-
