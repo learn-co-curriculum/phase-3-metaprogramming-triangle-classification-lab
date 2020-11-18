@@ -39,7 +39,10 @@ class Triangle
 end
 ```
 
-**Note**: Several of the tests will be looking for the `TriangleError` to be raised. If you implement a `rescue` for it, however, the tests will not recognize that the error was raised. For purposes of this lab, therefore, you should not include a `rescue`.
+**Note**: Several of the tests will be looking for the `TriangleError` to be
+raised. If you implement a `rescue` for it, however, the tests will not
+recognize that the error was raised. For purposes of this lab, therefore, you
+should not include a `rescue`.
 
 ## Hint
 
