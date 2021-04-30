@@ -1,8 +1,8 @@
 # Triangle Classification Lab
 
-## Objectives
+## Learning Goals
 
-1. Define a custom error and use it.
+- Define a custom error and use it
 
 ## Instructions
 
