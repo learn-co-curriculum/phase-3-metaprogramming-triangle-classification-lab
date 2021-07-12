@@ -2,30 +2,28 @@
 
 ## Learning Goals
 
-- Define a custom error and use it
+- Define a custom error class and use it
 
 ## Instructions
 
-- Write a `Triangle` class that accepts three arguments on initialization. Each
-  argument is a length of one of the three sides of the triangle.
+Write a `Triangle` class that accepts three arguments on initialization. Each
+argument is a length of one of the three sides of the triangle.
 
-- Give your Triangles an instance method, `kind` that returns, as a symbol, its
-  type. The valid types are:
+Define an instance method, `#kind` that returns, as a symbol, its
+type. The valid types are:
 
-1. `:equilateral`
-
-2. `:isosceles`
-
-3. `:scalene`
+- `:equilateral`
+- `:isosceles`
+- `:scalene`
 
 ![Triagle types](https://curriculum-content.s3.amazonaws.com/module-1/ruby-metaprogramming/triangle-classification-lab/Image_141_MathematicalTriangles.png)
 
-- The `kind` method should raise a custom error, `TriangleError` if the triangle
-  is invalid. Check out the hint below to understand what makes a triangle
-  invalid. Write a custom error class, `TriangleError` and inherit it from
-  `StandardError`. This custom error class should be defined in the same file as
-  the `Triangle` class, inside the `Triangle` class definition. Like
-  this:
+The `#kind` method should raise a custom error, `TriangleError` if the triangle
+is invalid. Check out the hint below to understand what makes a triangle valid.
+
+Write a custom error class, `TriangleError` and inherit it from `StandardError`.
+This custom error class should be defined in the same file as the `Triangle`
+class, inside the `Triangle` class definition, like this:
 
 ```ruby
 # lib/triangle.rb
@@ -44,12 +42,14 @@ raised. If you implement a `rescue` for it, however, the tests will not
 recognize that the error was raised. For purposes of this lab, therefore, you
 should not include a `rescue`.
 
-## Hint
+## Identifying Valid Triangles
 
-The sum of the lengths of any two sides of a triangle always exceeds the length
-of the third side. This is a principle known as the _triangle inequality_.
+A valid triangle must meet the following criteria:
 
-Further, each side must be larger than 0.
+- Each side must be larger than 0.
+
+- The sum of the lengths of any two sides of a triangle always exceeds the length
+  of the third side. This is a principle known as the _triangle inequality_.
 
 ## Resources
 
