@@ -9,7 +9,7 @@ class Triangle
   end
 
   def kind
-    is_triangle
+    is_a_triangle
     if x == y &&  y == z
       :equilateral
     elsif  x == y || y == z || x == z
@@ -27,7 +27,7 @@ class Triangle
     [x, y, z].all?(&:positive?)
   end
 
-  def is_triangle
+  def is_a_triangle
     raise TriangleError unless greater_than_zero? && triangle_unequal?
   end
 
