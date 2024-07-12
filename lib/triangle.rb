@@ -23,6 +23,14 @@ class Triangle
       :scalene
     end
   end
+
+  def valid_sides?
+    sorted_sides = sides.sort
+    sides.all? { |side| side > 0 } && (sorted_sides[0] + sorted_sides[1] > sorted_sides[2])
+  end
+
+  class TriangleError < StandardError
+  end
 end
 
 example1 = Triangle.new(3, 5, 6)
