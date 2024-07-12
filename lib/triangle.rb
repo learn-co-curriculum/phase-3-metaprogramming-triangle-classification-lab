@@ -1,5 +1,3 @@
-require "pry"
-
 class Triangle
   attr_reader :side1, :side2, :side3
 
@@ -14,19 +12,19 @@ class Triangle
   end
 
   def kind
-    if valid_sides?
-      case sides.uniq.length
-      when 1
-        :equilateral
-      when 2
-        :isosceles
-      else
-        :scalene
-      end
+    raise TriangleError unless valid_sides?
+
+    case sides.uniq.length
+    when 1
+      :equilateral
+    when 2
+      :isosceles
     else
-      raise TriangleError
+      :scalene
     end
   end
+
+  private
 
   def valid_sides?
     sorted_sides = sides.sort
@@ -36,8 +34,3 @@ class Triangle
   class TriangleError < StandardError
   end
 end
-
-# example1 = Triangle.new(3, 5, 6)
-
-# binding.pry
-
