@@ -14,13 +14,17 @@ class Triangle
   end
 
   def kind
-    case sides.uniq.length
-    when 1
-      :equilateral
-    when 2
-      :isosceles
+    if valid_sides?
+      case sides.uniq.length
+      when 1
+        :equilateral
+      when 2
+        :isosceles
+      else
+        :scalene
+      end
     else
-      :scalene
+      raise TriangleError
     end
   end
 
@@ -33,7 +37,7 @@ class Triangle
   end
 end
 
-example1 = Triangle.new(3, 5, 6)
+# example1 = Triangle.new(3, 5, 6)
 
-binding.pry
+# binding.pry
 
