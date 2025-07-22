@@ -1,25 +1,53 @@
 class Triangle
-  attr_accessor :equilateral, :isosceles, :scalene
+  class TriangleError < StandardError; end
 
-  def initialize(a, b, c)
-    @a = a 
-    @b = b 
-    @c = c 
+  attr_reader :side_a, :side_b, :side_c
+
+  def initialize(side_a, side_b, side_c)
+    @side_a = side_a
+    @side_b = side_b
+    @side_c = side_c
   end
 
-  def kind 
-    if [@a, @b, @c].any? { |side| side <= 0 } || @a + @b <= @c || @a + @c <= @b || @b + @c <= @a
-        raise TriangleError
-    elsif @a == @b && @b == @c 
+  def kind
+    validate_triangle
+
+    case sides.uniq.length
+    when 1
       :equilateral
-    elsif @a == @b || @b == @c || @a == @c
+    when 2
       :isosceles
-    else @a != @b && @b != @c && @c != @a
+    else
       :scalene
     end
   end
 
-  class TriangleError < StandardError
-  end 
+  private
 
+  def sides
+    [side_a, side_b, side_c]
+  end
+
+  def validate_triangle
+    validate_sides
+    validate_is_equal
+  end
+
+  def validate_sides
+    raise TriangleError, "Triangle has 0 or negative sides" if has_zero_or_negative_sides?
+  end
+
+  def has_zero_or_negative_sides?
+    sides.any? { |side| !side.positive? }
+  end
+
+  def validate_is_equal
+    raise TriangleError, "Triangle violates the triangle inequality rule" unless is_equal?
+  end
+
+  def is_equal?
+    side_a + side_b > side_c &&
+      side_a + side_c > side_b &&
+      side_b + side_c > side_a
+  end
 end
